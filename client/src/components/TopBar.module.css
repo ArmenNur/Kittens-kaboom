@@ -1,0 +1,29 @@
+.bar {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(20, 17, 31, 0.75);
+  backdrop-filter: blur(10px);
+  position: sticky; top: 0; z-index: 20;
+}
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 20px; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+.code { font-weight: 500; color: var(--muted); font-size: 13px; margin-left: 6px; }
+.code b { color: var(--brand-2); letter-spacing: 2px; }
+.actions { display: flex; gap: 6px; align-items: center; }
+/* .bar prefix beats the global .btn display rule */
+.bar .onlyMobile { display: none; }
+
+@media (max-width: 860px) {
+  .bar .onlyMobile { display: inline-flex; }
+}
+@media (max-width: 560px) {
+  .bar { padding: 8px 10px; gap: 6px; }
+  .brand { font-size: 16px; gap: 4px; }
+  .hideSm { display: none; }
+  .actions { gap: 4px; }
+}
+@media (max-width: 420px) {
+  /* Keep Leave on-screen: drop the wordmark, keep the bomb + room code. */
+  .brandText { display: none; }
+  .code { margin-left: 0; }
+}

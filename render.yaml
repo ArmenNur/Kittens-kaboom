@@ -1,0 +1,12 @@
+# One-click deploy on Render (free plan): New → Blueprint → point at this repo.
+services:
+  - type: web
+    name: kitten-kaboom
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"

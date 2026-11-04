@@ -1,0 +1,29 @@
+{
+  "name": "kitten-kaboom",
+  "version": "1.0.0",
+  "description": "Real-time multiplayer browser card game for 2-10 players (with bots). No database.",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c magenta,cyan \"node --watch server/index.js\" \"vite --config client/vite.config.js\"",
+    "build": "vite build --config client/vite.config.js",
+    "start": "node server/index.js",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^4.3.4",
+    "express": "^4.21.2",
+    "framer-motion": "^11.11.17",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "vite": "^5.4.11"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

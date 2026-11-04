@@ -1,0 +1,8 @@
+.winner { text-align: center; }
+.trophy { font-size: 86px; }
+.title { font-family: var(--font-display); font-size: 32px; margin: 4px 0; }
+.ranking { list-style: none; padding: 0; margin: 18px auto 0; max-width: 380px; text-align: left; }
+.ranking li { display: flex; align-items: center; gap: 10px; padding: 8px 10px; border-radius: 10px; }
+.ranking li:first-child { background: rgba(255, 211, 77, 0.15); }
+.place { width: 22px; font-weight: 800; font-family: var(--font-display); color: var(--muted); }
+.name { flex: 1; font-weight: 600; }

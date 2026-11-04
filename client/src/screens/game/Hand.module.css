@@ -1,0 +1,47 @@
+.area { padding: 6px 16px 12px; }
+.bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.who { display: flex; align-items: center; gap: 10px; }
+.myName { font-weight: 700; display: flex; align-items: center; gap: 6px; }
+.sub { font-size: 12px; color: var(--muted); }
+.actions { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; justify-content: flex-end; }
+.hint { font-size: 13px; color: var(--muted); max-width: 320px; }
+.err { color: #ffadad; }
+
+.hand {
+  display: flex; justify-content: safe center; align-items: flex-end;
+  padding: 36px 16px 6px;
+  min-height: calc(var(--card-h) + 48px);
+  overflow-x: auto; overflow-y: visible;
+  scrollbar-width: thin;
+}
+.card { margin-left: var(--overlap, -8px); }
+.card:first-child { margin-left: 0; }
+.empty { color: var(--muted); align-self: center; font-style: italic; }
+.dead { text-align: center; padding: 26px; font-family: var(--font-display); font-size: 20px; color: #ffb3b3; }
+
+.nope {
+  position: fixed; right: 344px; bottom: 30px; z-index: 40;
+  width: 108px; height: 108px; border-radius: 50%;
+  border: 4px solid #fff;
+  background: radial-gradient(circle at 35% 30%, #ff7070, #c41212);
+  color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 24px;
+  box-shadow: 0 10px 30px rgba(196, 18, 18, 0.6);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1;
+}
+.nope small { font-size: 11px; font-weight: 600; opacity: 0.85; margin-top: 4px; }
+
+@media (max-width: 1100px) {
+  .nope { right: 290px; }
+}
+@media (max-width: 860px) {
+  .nope { right: 16px; bottom: 220px; width: 90px; height: 90px; font-size: 20px; }
+  .hint { display: none; }
+}
+@media (max-width: 520px) {
+  .area { padding: 4px 8px 10px; }
+  .hand { padding: 30px 6px 6px; }
+  /* Always overlap at least 24px on phones so a normal hand fits without scrolling. */
+  .card { margin-left: min(var(--overlap, -8px), -24px); }
+  .actions { width: 100%; }
+  .actions :global(.btn) { flex: 1; padding: 9px 10px; font-size: 14px; }
+}

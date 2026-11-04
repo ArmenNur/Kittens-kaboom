@@ -1,0 +1,17 @@
+.overlay {
+  position: fixed; inset: 0; z-index: 80;
+  display: grid; place-items: center;
+  pointer-events: none;
+  background: radial-gradient(circle, rgba(255, 120, 40, 0.65), rgba(120, 0, 0, 0.75) 45%, rgba(0, 0, 0, 0.85) 75%);
+}
+.defused { background: radial-gradient(circle, rgba(47, 209, 126, 0.5), rgba(0, 60, 30, 0.75) 50%, rgba(0, 0, 0, 0.8) 80%); }
+.inner { text-align: center; padding: 0 16px; }
+.emoji { font-size: 110px; }
+.word {
+  font-family: var(--font-display); font-weight: 700;
+  font-size: clamp(56px, 12vw, 140px);
+  color: #fff; letter-spacing: 2px;
+  text-shadow: 0 0 30px #ff7a1a, 0 6px 0 #b11;
+}
+.defused .word { text-shadow: 0 0 30px #2fd17e, 0 6px 0 #0a6b38; }
+.sub { font-size: 22px; font-weight: 600; margin-top: 8px; }
