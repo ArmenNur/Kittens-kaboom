@@ -36,17 +36,13 @@ export const Card = forwardRef(function Card(
       data-type={type}
       {...motionProps}
     >
-      <div className={s.inner}>
-        <span className={`${s.corner} emoji`}>{t.icon}</span>
-        <span className={`${s.cornerBr} emoji`}>{t.icon}</span>
-        <div className={s.title}>{t.name}</div>
-        <div className={s.art}>
-          <span className={`${s.artMain} emoji`}>{t.art}</span>
-          <span className={`${s.artSub} emoji`}>{t.icon}</span>
-        </div>
-        <div className={s.desc}>{t.desc}</div>
-        <div className={s.flavor}>“{t.flavor}”</div>
+      <span className={`${s.badge} emoji`}>{t.icon}</span>
+      <div className={s.title} style={{ '--len': t.name.length }}>{t.name}</div>
+      <div className={s.art}>
+        <span className={`${s.artMain} emoji`}>{t.art}</span>
       </div>
+      <div className={s.desc}>{t.desc}</div>
+      <div className={s.flavor}>“{t.flavor}”</div>
     </motion.div>
   );
 });
